@@ -22,3 +22,4 @@ int main(){
 	return 0;
 }
 ```
+see more at [example](https://github.com/MasterIceZ/genlib/tree/main/example)
