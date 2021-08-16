@@ -5,10 +5,6 @@ using namespace std;
 
 int main(){
 	startGen();
-	rand_tree(10);
-	printf("\n\n\n");
-	rand_connected_directed_weighted_graph(10, 20);
-	printf("\n\n\n");
-	rand_directed_weighted_graph(10, 20);
+	printf("%d", rand_int(1, 100));
 	return 0;
 }

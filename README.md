@@ -12,7 +12,7 @@ Generate testcase for competitive programming in C++ Languauge.
 |``gen_tree(int n, bool print = true)``|``set<tuple<int, int>>``|generate set of edge list of ``1`` tree with ``n`` nodes|
 |``gen_connected_graph(int n, int m, bool print = true)``|``set<tuple<int, int>>``|generate ``1`` graph's edge with ``m`` edges and ``n`` nodes|
 |``gen_complete_graph(int n, bool printed = true)``|``set<tuple<int, int>>``|generate complete graph's edge with ``n`` nodes|
-|``gen_graph(int n, int m, bool print = true)``|``set<tuple<int, int>>``|generate complete graph's of ``n`` nodes|
+|``gen_graph(int n, int m, bool print = true)``|``set<tuple<int, int>>``|generates graph's of ``n`` nodes|
 ### Example
 ```cpp
 #include<bits/stdc++.h>

@@ -26,7 +26,7 @@ string rand_str(int sz=1, char l='a', char r='z'){
 	return s;
 }
 
-template<typename T> vectopr<T> rand_perm(vector<T> v){
+template<typename T> vector<T> rand_perm(vector<T> v){
 	random_shuffle(v.begin(), v.end());
 	return v;
 }
@@ -36,7 +36,7 @@ vector<int> rand_perm(int n){
 	for(int i=1; i<=n; ++i){
 		v.push_back(i);
 	}
-	return random_perm(v);
+	return rand_perm(v);
 }
 
 set<tuple<int, int>> gen_tree(int n, bool print = true){
