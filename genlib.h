@@ -80,7 +80,7 @@ set<tuple<int, int, int>> rand_connected_directed_weighted_graph(int n, int m, i
 	return s;
 }
 
-set<tuple<int, int, int>> rand_undirected_weighted_graph(int n, int m, int l=1, int r=10000, bool print = true){
+set<tuple<int, int, int>> rand_directed_weighted_graph(int n, int m, int l=1, int r=10000, bool print = true){
 	set<tuple<int, int, int>> s;
 	set<pair<int, int>> graph;
 	while((int)s.size() != m){
