@@ -1,3 +1,5 @@
 *.in
 *.out
 *.exe
+test.cpp
+generator.sh
