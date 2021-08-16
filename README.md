@@ -10,7 +10,7 @@ Generate testcase for competitive programming in C++ Languauge.
 |``rand_connected_directed_weighted_graph(int n, int m, int l=1, int r=10000, bool print=true)``|``set<tuple<int, int, int>>``|generate directed graph with ``n`` nodes, ``m`` edges and weight in range ``l`` to ``r`` in 1 component|
 |``rand_undirected_weighted_graph(int n, int m, int l=1, int r=10000, bool print=true)``|``set<tuple<int, int, int>>``|generate directed weighted graph with ``n`` nodes, ``m`` edges and weight in range ``l`` to ``r`` in random number of components|
 ### Example
-```
+```cpp
 #include<bits/stdc++.h>
 using namespace std;
 
