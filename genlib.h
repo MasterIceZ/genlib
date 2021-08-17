@@ -3,8 +3,43 @@
 #include <ctime>
 #include <set>
 #include <tuple>
+#include <unordered_map>
 
 using namespace std;
+
+namespace util{
+	vector<int> sieveoferathos(int l, int r){
+		vector<int> ret;
+		unordered_map<int, int> mp;
+		l = max(2, l);
+		for(int i=l; i<=r; ++i){
+			if(!mp[i]){
+				ret.push_back(i);
+				for(int j=i*i; j<=r; j+=i){
+					mp[j] = 1;
+				}
+			}
+		}
+		return ret;
+	}
+	bool isPrime(int u){
+		if(u <= 1){
+			return false;
+		}
+		if(u <= 3){
+			return true;
+		}
+		if(u % 2 == 0 || u % 3 == 0){
+			return false;
+		}
+		for(int i=5; i*i<=u; i+=6){
+			if(u % i == 0 || u % (i + 2) == 0){
+				return false;
+			}
+		}
+		return true;
+	}
+}
 
 void startGen(){
 	srand(time(NULL));
@@ -37,6 +72,15 @@ vector<int> rand_perm(int n){
 		v.push_back(i);
 	}
 	return rand_perm(v);
+}
+
+template<typename T> T choose(vector<T> v){
+	return v[rand_int(0, v.size() - 1)];	
+}
+
+int rand_prime(int l=1, int r=100){
+	vector<int> v = util::sieveoferathos(l, r);
+	return choose(v);
 }
 
 set<tuple<int, int>> gen_tree(int n, bool print = true){
@@ -104,3 +148,4 @@ set<tuple<int, int>> gen_complete_graph(int n, bool print = true){
 	}
 	return s;
 }
+
