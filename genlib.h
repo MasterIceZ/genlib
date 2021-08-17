@@ -149,3 +149,19 @@ set<tuple<int, int>> gen_complete_graph(int n, bool print = true){
 	return s;
 }
 
+vector<vector<char>> gen_table(int n, int m, char a, int b, bool print = true){
+	vector<vector<char>> t(n + 1, vector<char>(m + 1));
+	for(int i=1; i<=n; ++i){
+		for(int j=1; j<=m; ++j){
+			int rnd = rand_int(1, 2);
+			t[i][j] = rnd % 2 ? a : b;
+			if(print){
+				printf("%c", t[i][j]);
+			}
+		}
+		if(print){
+			printf("\n");
+		}
+	}
+	return t;
+}

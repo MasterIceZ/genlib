@@ -15,6 +15,7 @@ Generate testcase for competitive programming in C++ Languauge.
 |``gen_connected_graph(int n, int m, bool print = true)``|``set<tuple<int, int>>``|generate ``1`` graph's edge with ``m`` edges and ``n`` nodes|
 |``gen_complete_graph(int n, bool printed = true)``|``set<tuple<int, int>>``|generate complete graph's edge with ``n`` nodes|
 |``gen_graph(int n, int m, bool print = true)``|``set<tuple<int, int>>``|generates graph's of ``n`` nodes|
+|``gen_table(int n, int m, char a, char b, bool print = true)``|``vector<vector<char>>``|generate table with ``n`` row ``m`` column which filled with ``a`` and ``b``|
 ### Example
 ```cpp
 #include<bits/stdc++.h>
