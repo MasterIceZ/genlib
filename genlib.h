@@ -61,7 +61,7 @@ string rand_str(int sz=1, char l='a', char r='z'){
 	return s;
 }
 
-template<typename T> vector<T> rand_perm(vector<T> v){
+template<typename T> vector<T> rand_perm(vector<T>& v){
 	random_shuffle(v.begin(), v.end());
 	return v;
 }
