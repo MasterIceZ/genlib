@@ -5,3 +5,7 @@ test.cpp
 generator.sh
 
 gentest
+
+*.sol
+*.ans
+.env

@@ -4,6 +4,9 @@
 #include <set>
 #include <tuple>
 #include <unordered_map>
+#include <array>
+#include <cstdio>
+#include <iostream>
 
 using namespace std;
 
