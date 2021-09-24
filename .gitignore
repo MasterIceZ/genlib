@@ -9,3 +9,5 @@ gentest
 *.sol
 *.ans
 .env
+
+test.cpp
