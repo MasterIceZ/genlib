@@ -51,6 +51,15 @@ namespace util{
 		}
 		return res;
 	}
+	long long hash_size(ll now){
+		vector<long long> st = {
+			53, 97, 193, 389, 769, 1543, 3079, 6151, 12289, 24593,
+			49157, 98317, 196613, 393241, 786433, 1572869, 3145739,
+			6291469, 12582917, 25165843, 50331653, 100663319,
+			201326611, 402653189, 805306457, 1610612741
+		};
+		return st[upper_bound(st.begin(), st.end(), now) - (st.begin())];
+	}
 }
 
 void startGen(){
