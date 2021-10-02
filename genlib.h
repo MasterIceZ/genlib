@@ -11,20 +11,6 @@
 using namespace std;
 
 namespace util{
-	vector<int> sieveoferathos(int l, int r){
-		vector<int> ret;
-		unordered_map<int, int> mp;
-		l = max(2, l);
-		for(int i=l; i<=r; ++i){
-			if(!mp[i]){
-				ret.push_back(i);
-				for(int j=i*i; j<=r; j+=i){
-					mp[j] = 1;
-				}
-			}
-		}
-		return ret;
-	}
 	bool isPrime(int u){
 		if(u <= 1){
 			return false;
@@ -41,6 +27,29 @@ namespace util{
 			}
 		}
 		return true;
+	}
+	vector<int> sieveoferathos(int l, int r){
+		vector<int> ret;
+		unordered_map<int, int> mp;
+		l = max(2, l);
+		for(int i=l; i<=r; ++i){
+			if(!mp[i]){
+				ret.push_back(i);
+				for(int j=i*i; j<=r; j+=i){
+					mp[j] = 1;
+				}
+			}
+		}
+		return ret;
+	}
+	vector<int> generate_prime(int l, int r){
+		vector<int> res;
+		for(int i=l; i<=r; ++i){
+			if(isPrime(i)){
+				res.push_back(i);
+			}
+		}
+		return res;
 	}
 }
 
@@ -90,7 +99,7 @@ template<typename T> T choose(vector<T> v){
 }
 
 int rand_prime(int l=1, int r=100){
-	vector<int> v = util::sieveoferathos(l, r);
+	vector<int> v = util::generate_prime(l, r);
 	return choose(v);
 }
 
