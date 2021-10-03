@@ -87,14 +87,6 @@ template<typename T> vector<T> rand_perm(vector<T>& v){
 	return v;
 }
 
-template<typename T> vector<T> rand_perm(set<T> s){
-	vector<T> v;
-	for(set<T>::iterator it=s.begin(); it != s.end(); ++it){
-		v.push_back(*it);
-	}
-	return rand_perm(v);
-}
-
 vector<int> rand_perm(int n){
 	vector<int> v;
 	for(int i=1; i<=n; ++i){
