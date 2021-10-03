@@ -12,6 +12,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - uses: actions/checkout@v2
+    - name: lists
+      run: ls
     - name: compile
       run: g++ -std=c++17 -Wall main.cpp -o main
     - name: run
