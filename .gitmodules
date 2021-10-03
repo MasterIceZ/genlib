@@ -1,0 +1,3 @@
+[submodule "stdc++"]
+	path = stdc++
+	url = https://github.com/khaveesh/macOS-stdc.h.git1
