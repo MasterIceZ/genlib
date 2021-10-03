@@ -12,9 +12,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: make
-      run: make
-    - name: make 
-      run: make 
-    - name: make 
-      run: make 
+    - name: compile
+      run: g++ -std=c++17 -Wall main.cpp -o main
+    - name: run
+      run: ./main 10
+    - name: clean
+      run: rm main
