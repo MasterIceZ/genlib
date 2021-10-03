@@ -2,6 +2,9 @@
 Generate testcase for competitive programming in C++ Languauge.
 [Download](https://raw.githubusercontent.com/MasterIceZ/genlib/main/genlib.h)
 
+### Requirements
+``stdc++.h`` which will be installed form g++(linux) or download it [here](https://github.com/khaveesh/macOS-stdc.h)
+
 ### Example
 ```cpp
 #include<bits/stdc++.h>
