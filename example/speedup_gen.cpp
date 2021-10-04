@@ -8,7 +8,7 @@ int main(int argc, char *argv[]){
 	int m = atoi(argv[2]);
 	int k = atoi(argv[3]);
 	int q = atoi(argv[4]);
-	startGen();
+	startGen(argv, 1);
 	printf("%d %d %d %d\n", n, m, k, q);
 	set<tuple<int, int>> edges = gen_connected_graph(n, m, false);
 	for(set<tuple<int, int>>::iterator it = edges.begin(); it != edges.end(); ++it){
