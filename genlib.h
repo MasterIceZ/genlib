@@ -71,8 +71,8 @@ namespace util{
 void startGen(char *argv[], int version){
 	srand(time(NULL));
 	size_t sz = sizeof(argv)/sizeof(argv[0]);
-	assert(sz > 0, "Argument must be more than 0");
-	assert(version == 1, "Version must be 1");
+	assert(sz > 0 && "Argument must be more than 0");
+	assert(version == 1 && "Version must be 1");
 }
 
 int rand_int(int l = 1, int r = 10){
