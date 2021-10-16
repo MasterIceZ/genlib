@@ -18,7 +18,9 @@ jobs:
         cd Test
         ls
     - name: compile
-      run: g++ -std=c++17 main.cpp -o main
+      run: |
+        ls
+        g++ -std=c++17 main.cpp -o main
     - name: run
       run: ./main 10 > example_out.txt
     - name: clean
