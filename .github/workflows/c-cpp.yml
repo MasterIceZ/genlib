@@ -14,7 +14,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: directory
-      run: cd Test
+      run: |
+        cd Test
+        ls
     - name: compile
       run: make compile
     - name: run
