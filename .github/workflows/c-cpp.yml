@@ -13,18 +13,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: directory
+    - name: test
       run: |
         cd Test
-        ls
-    - name: compile
-      run: |
-        ls
         g++ -std=c++17 main.cpp -o main
-    - name: run
-      run: ./main 10 > example_out.txt
-    - name: clean
-      run: rm main
+        ./main 10 > example_out.txt
+        rm main
     - name: Commit files
       if: github.event.commits[0].message != 'Commit Example'
       run: |
