@@ -13,11 +13,24 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: lists
-      run: ls
+    - name: directory
+      run: cd Test
     - name: compile
       run: make compile
     - name: run
       run: make run
     - name: clean
       run: make clean
+    - name: Commit files
+      if: github.event.commits[0].message != 'Commit Example'
+      run: |
+        git config --global user.email "icy-bot@users.noreply.github.com"
+        git config --global user.name "Borworntat Dendumrongkul"
+        git add .
+        git commit -m "Commit Example" -a
+    - name: Push changes
+      if: github.event.commits[0].message != 'Commit Example'
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.ACCESS_TOKEN }}
+        branch: main
