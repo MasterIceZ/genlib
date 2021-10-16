@@ -18,11 +18,11 @@ jobs:
         cd Test
         ls
     - name: compile
-      run: make compile
+      run: g++ -std=c++17 main.cpp -o main
     - name: run
-      run: make run
+      run: ./main 10 > example_out.txt
     - name: clean
-      run: make clean
+      run: rm main
     - name: Commit files
       if: github.event.commits[0].message != 'Commit Example'
       run: |
