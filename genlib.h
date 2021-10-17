@@ -104,8 +104,8 @@ int rand_prime(int l=1, int r=100){
 }
 
 double rand_double(double l, double r){
-	double r = (double)rand() / RAND_MAX;
-	return l + r * (r - l);
+	double rnd = (double)rand() / RAND_MAX;
+	return l + rnd * (r - l);
 }
 
 set<tuple<int, int>> gen_tree(int n, bool print = true){
