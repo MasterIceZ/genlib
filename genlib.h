@@ -1,13 +1,3 @@
-#include <cstdlib>
-#include <vector>
-#include <ctime>
-#include <set>
-#include <tuple>
-#include <unordered_map>
-#include <array>
-#include <cstdio>
-#include <iostream>
-
 using namespace std;
 
 namespace util{
@@ -111,6 +101,11 @@ template<typename T> T choose(vector<T> v){
 int rand_prime(int l=1, int r=100){
 	vector<int> v = util::generate_prime(l, r);
 	return choose(v);
+}
+
+double rand_double(double l, double r){
+	double r = (double)rand() / RAND_MAX;
+	return l + r * (r - l);
 }
 
 set<tuple<int, int>> gen_tree(int n, bool print = true){
