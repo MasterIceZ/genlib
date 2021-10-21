@@ -190,3 +190,20 @@ vector<vector<char>> gen_table(int n, int m, char a, int b, bool print = true){
 	}
 	return t;
 }
+
+string gen_palindrome(size_t sz, bool upper_case = false, bool print = true) {
+    char l = 'a', r = 'z';
+    if(upper_case)
+        l = 'A', r = 'Z';
+    string new_chr = rand_str(1, l, r);
+    string middle = new_chr + (sz % 2 ? "" : new_chr);
+    int prefix_size = (sz + 1) / 2;
+    string prefix = rand_str(prefix_size, l, r);
+    string suffix = prefix;
+    reverse(suffix.begin(), suffix.end());
+    string palindrome = prefix + middle + suffix;
+    if(print) {
+        printf("%s\n", palindrome.c_str());
+	}
+	return palindrome;
+}
