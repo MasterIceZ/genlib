@@ -56,7 +56,7 @@ namespace util{
 		};
 		return st[upper_bound(st.begin(), st.end(), now) - (st.begin())];
 	}
-	ll nCr(ll n, ll r){
+	long long nCr(long long n, long long r){
 		if(r == 0 || n == 1 || r == n){
 			return 1;
 		}
