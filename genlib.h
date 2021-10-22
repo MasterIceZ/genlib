@@ -56,6 +56,12 @@ namespace util{
 		};
 		return st[upper_bound(st.begin(), st.end(), now) - (st.begin())];
 	}
+	ll nCr(ll n, ll r){
+		if(r == 0 || n == 1 || r == n){
+			return 1;
+		}
+		return nCr(n-1, r-1) + nCr(n-1, r);
+	}
 }
 
 void startGen(char *argv[], int version){
@@ -193,9 +199,10 @@ vector<vector<char>> gen_table(int n, int m, char a, int b, bool print = true){
 
 string gen_palindrome(size_t sz, bool upper_case = false, bool print = true) {
     char l = 'a', r = 'z';
-    if(upper_case)
+    if(upper_case){
         l = 'A', r = 'Z';
-    string new_chr = rand_str(1, l, r);
+	}
+	string new_chr = rand_str(1, l, r);
     string middle = new_chr + (sz % 2 ? "" : new_chr);
     int prefix_size = (sz + 1) / 2;
     string prefix = rand_str(prefix_size, l, r);
