@@ -2,7 +2,7 @@
 // Test case generator example
 
 #include<bits/stdc++.h>
-#include "../testlib.h"
+#include "../testlib/testlib.h"
 #include "../genlib.h"
 using namespace std;
 
