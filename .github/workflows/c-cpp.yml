@@ -16,6 +16,7 @@ jobs:
     - name: test
       run: |
         git submodule init
+        git submodule update
         cd Test
         g++ -std=c++17 main.cpp -o main
         ./main 10 > example_out.txt
