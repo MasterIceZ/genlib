@@ -1,3 +1,5 @@
+#include<bits/stdc++.h>
+#include "testlib.h"
 using namespace std;
 
 namespace util{
@@ -64,60 +66,24 @@ namespace util{
 	}
 }
 
-void startGen(char *argv[], int version){
-	srand(time(NULL));
-	size_t sz = sizeof(argv)/sizeof(argv[0]);
-	assert(sz > 0 && "Argument must be more than 0");
-	assert(version == 1 && "Version must be 1");
-}
-
-int rand_int(int l = 1, int r = 10){
-	if(l > r){
-		return -1;
-	}
-	return (rand() % (r - l + 1)) + l;
-}
-
 string rand_str(int sz=1, char l='a', char r='z'){
 	string s;
 	for(int i=1; i<=sz; ++i){
-		char newchr = (char)rand_int(l, r);
+		char newchr = (char)rnd.next(l, r);
 		s += newchr;
 	}
 	return s;
 }
 
-template<typename T> vector<T> rand_perm(vector<T>& v){
-	random_shuffle(v.begin(), v.end());
-	return v;
-}
-
-vector<int> rand_perm(int n){
-	vector<int> v;
-	for(int i=1; i<=n; ++i){
-		v.push_back(i);
-	}
-	return rand_perm(v);
-}
-
-template<typename T> T choose(vector<T> v){
-	return v[rand_int(0, v.size() - 1)];	
-}
-
 int rand_prime(int l=1, int r=100){
 	vector<int> v = util::generate_prime(l, r);
-	return choose(v);
-}
-
-double rand_double(double l, double r){
-	double rnd = (double)rand() / RAND_MAX;
-	return l + rnd * (r - l);
+	return v[(int)rnd.next(0, (int)v.size() - 1)];
 }
 
 set<tuple<int, int>> gen_tree(int n, bool print = true){
 	set<tuple<int, int>> s;
 	for(int i=2; i<=n; ++i){
-		int u = rand_int(1, i - 1), v = i;
+		int u = rnd.next(1, i - 1), v = i;
 		if(u == v){
 			continue;
 		}
@@ -138,7 +104,7 @@ set<tuple<int, int>> gen_connected_graph(int n, int m, bool print = true){
 		s.emplace(i, i + 1);
 	}
 	while((int)s.size() != m){
-		int a = rand_int(1, n), b = rand_int(1, n);
+		int a = rnd.next(1, n), b = rnd.next(1, n);	
 		int u = min(a, b), v = max(a, b);
 		if(u == v || s.count(make_tuple(u, v))){
 			continue;
@@ -154,7 +120,7 @@ set<tuple<int, int>> gen_connected_graph(int n, int m, bool print = true){
 set<tuple<int, int>> gen_graph(int n, int m, bool print = true){
 	set<tuple<int, int>> s;
 	while((int)s.size() != m){
-		int a = rand_int(1, n), b = rand_int(1, n);
+		int a = rnd.next(1, n), b = rnd.next(1, n);	
 		int u = min(a, b), v = max(a, b);
 		if(u == v || s.count(make_tuple(u, v))){
 			continue;
@@ -184,8 +150,8 @@ vector<vector<char>> gen_table(int n, int m, char a, int b, bool print = true){
 	vector<vector<char>> t(n + 1, vector<char>(m + 1));
 	for(int i=1; i<=n; ++i){
 		for(int j=1; j<=m; ++j){
-			int rnd = rand_int(1, 2);
-			t[i][j] = rnd % 2 ? a : b;
+			int r = rnd.next(1, 2);
+			t[i][j] = r % 2 ? a : b;
 			if(print){
 				printf("%c", t[i][j]);
 			}

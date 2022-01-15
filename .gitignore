@@ -11,3 +11,5 @@ gentest
 .env
 
 test.cpp
+
+testlib.h
