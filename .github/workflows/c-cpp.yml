@@ -15,12 +15,13 @@ jobs:
     - uses: actions/checkout@v2
     - name: test
       run: |
+        sudo apt-get install pwgen
         git submodule init
         git submodule update
         cp testlib/testlib.h testlib.h
         cd Test
         g++ -std=c++17 main.cpp -o main
-        ./main 10 > example_out.txt
+        ./main 10 $(pwgen 10 1) > example_out.txt
         rm main
     - name: Commit files
       if: github.event.commits[0].message != 'Commit Example'
